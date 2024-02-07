@@ -16,6 +16,9 @@ const app = express();
 // declaring port
 const port = 3000
 
+// convert all the post request into json file
+app.use(express.json())
+
 // using router with /api/user path
 app.use("/api/user",router)
 
