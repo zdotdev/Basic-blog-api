@@ -4,8 +4,11 @@ import express from 'express'
 // import mongoose
 import mongoose from 'mongoose'
 
-// Importing route
+// Importing user route
 import router from './routes/user-routes.js';
+
+// import blog route
+import blogRouter from './routes/blog-routes.js';
 
 // declare app
 const app = express();
@@ -18,7 +21,7 @@ app.use(express.json())
 
 // using router with /api/user path
 app.use("/api/user",router)
-
+app.use("/api/blogs", blogRouter)
 // use mongoose
 mongoose.connect("mongodb+srv://admin:weakpassword@cluster0.dtfunjp.mongodb.net/?retryWrites=true&w=majority")
 .then(() => {

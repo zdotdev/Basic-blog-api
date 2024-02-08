@@ -1,23 +1,23 @@
 import mongoose from 'mongoose';
 
-const Schema = new mongoose.Schema
+const Schema = mongoose.Schema
 
 const blogSchema = new Schema({
     title: {
         type: String,
-        required: True
+        required: true
     },
     description:{
         type: String,
-        required: True
+        required: true
     },
     image: {
         type: String,
-        required: True
+        required: true
     },
     user:{
         type: String,
-        required: True
+        required: true
     }
 })
 

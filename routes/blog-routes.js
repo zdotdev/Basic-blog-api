@@ -1,5 +1,9 @@
 import express from 'express'
+import { addBlog, getAllBlogs } from '../controllers/blog-controller.js'
 
-const router = express.Router()
+const blogRouter = express.Router()
 
-router.get("/", getAllBlogs)
+blogRouter.get("/", getAllBlogs)
+blogRouter.post("/add", addBlog)
+
+export default blogRouter
