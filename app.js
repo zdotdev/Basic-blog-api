@@ -21,8 +21,11 @@ app.use(express.json())
 
 // using router with /api/user path
 app.use("/api/user",router)
+
+// Use blog router
 app.use("/api/blogs", blogRouter)
-// use mongoose
+
+// use mongoose to connect to the mongoDB
 mongoose.connect("mongodb+srv://admin:weakpassword@cluster0.dtfunjp.mongodb.net/?retryWrites=true&w=majority")
 .then(() => {
     // to listen to the port
