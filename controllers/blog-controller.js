@@ -111,3 +111,21 @@ export const deleteBlog = async (req, res) => {
 
     return res.status(200).json({blog})
 }
+
+// Get the blogs by user
+export const getByUserID = async (req, res) => {
+    const userID = req.params.id
+    let userBlogs
+
+    try{
+        userBlogs = await User.findById(userID).populate("blogs")
+    }
+    catch(err){
+        return console.log(err)
+    }
+    if(!userBlogs){
+        return res.status(404).json({erroor: "No blogs found"})
+    }
+
+    return res.status(200).json({blogs:userBlogs})
+}

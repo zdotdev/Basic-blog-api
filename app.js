@@ -37,8 +37,3 @@ mongoose.connect("mongodb+srv://admin:weakpassword@cluster0.dtfunjp.mongodb.net/
 .catch((err) => {
     console.log(err)
 })
-
-// testing 
-app.get("/api", (req, res) => {
-    res.send("test")
-})
