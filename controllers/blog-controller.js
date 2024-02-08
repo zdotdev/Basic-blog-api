@@ -71,3 +71,20 @@ export const getByID = async (req, res) => {
     
     return res.status(200).json({blog})
 } 
+
+export const deleteBlog = async (req, res) => {
+    const id = req.params.id
+    let blog
+
+    try{
+        blog = await Blog.findByIdAndDelete(id)
+    }
+    catch(err){
+        return console.log(err)
+    }
+    if(!id){
+        return res.status(400).json({error: "Can't delete blog"})
+    }
+
+    return res.status(200).json({blog})
+}
