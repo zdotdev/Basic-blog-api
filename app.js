@@ -7,9 +7,6 @@ import mongoose from 'mongoose'
 // Importing route
 import router from './routes/user-routes.js';
 
-// importing mongodb
-import mongodb from 'mongodb'
-
 // declare app
 const app = express();
 
